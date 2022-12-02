@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var webSocketClient:WebSocketClient
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        VStack{
+            HStack{
+                Spacer()
+                Text("connected State")
+                Spacer()
+            }
+            Spacer()
+            VStack{
+                Text("Message")
+            }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
+    static var webSocketClient = WebSocketClient(context: .defaultServer())
+    
     static var previews: some View {
-        ContentView()
+        ContentView(webSocketClient: webSocketClient)
     }
 }

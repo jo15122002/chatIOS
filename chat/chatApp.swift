@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct chatApp: App {
+    
+    @StateObject var webSocketClient = WebSocketClient(context: .defaultServer())
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(webSocketClient: webSocketClient)
         }
     }
 }
