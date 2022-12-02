@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ReceivedMessageCellView: View {
-    var text:String
+    var message:Message
     var minSpacerLength:CGFloat
     var body: some View {
         HStack{
-            Text(text)
+            Text(message.content)
             Spacer(minLength: minSpacerLength)
         }
     }
@@ -20,6 +20,6 @@ struct ReceivedMessageCellView: View {
 
 struct ReceivedMessageCellView_Previews: PreviewProvider {
     static var previews: some View {
-        ReceivedMessageCellView(text: "Message recu", minSpacerLength: CGFloat(0.5))
+        ReceivedMessageCellView(message: Message.defaultSentMessage(), minSpacerLength: CGFloat(0.5))
     }
 }

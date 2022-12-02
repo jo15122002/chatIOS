@@ -51,20 +51,22 @@ class WebSocketClient:ObservableObject{
 
 extension WebSocketClient:WebSocketConnectionDelegate{
     func webSocketDidConnect(connection: WebSocketConnection) {
+        print("Connected")
         self.connected = true
-        //socket?.send(string: name)
+        socket?.send(string: name)
     }
     
     func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
+        print("Disconnected")
         self.connected = false
     }
     
     func webSocketViabilityDidChange(connection: WebSocketConnection, isViable: Bool) {
-        
+        print("Socket viability")
     }
     
     func webSocketDidAttemptBetterPathMigration(result: Result<WebSocketConnection, NWError>) {
-        
+        print("Attempt better path")
     }
     
     func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
@@ -76,8 +78,8 @@ extension WebSocketClient:WebSocketConnectionDelegate{
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
-        self.lastReceivedMessage = string
         print("nouveau message")
+        self.lastReceivedMessage = string
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {

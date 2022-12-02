@@ -25,7 +25,7 @@ struct ContentView: View {
             List(messages){ message in
                 switch message.messageType{
                     case "received":
-                    ReceivedMessageCellView(text: message.content, minSpacerLength: halfScreenWidth)
+                    ReceivedMessageCellView(message: message, minSpacerLength: halfScreenWidth)
                     case "sent":
                         SentMessageCellView(text: message.content, minSpacerLength: halfScreenWidth)
                     default:
@@ -50,7 +50,6 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    
     static var webSocketClient = WebSocketClient(context: .defaultServer())
     static var messages = Message.defaultMessages()
     @State static var textToSend = "Un texte a envoyer"
