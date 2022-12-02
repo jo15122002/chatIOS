@@ -40,7 +40,7 @@ class WebSocketClient:ObservableObject{
     init(context:Ctx){
         if let socketUrl = context.url(){
             socket = NWWebSocket(url: socketUrl, connectAutomatically: true)
-            //socket?.delegate = self
+            socket?.delegate = self
         }
     }
     
