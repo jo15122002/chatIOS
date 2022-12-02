@@ -36,6 +36,9 @@ struct ContentView: View {
             TextField("SendMessage", text: $messageToSend).onSubmit {
                 messages.append(Message(id: messages.count, content: self.messageToSend, messageType: "sent"))
             }
+            Button("Simul rec") {
+                messages.append(Message(id: messages.count, content: "new received message", messageType: "received"))
+            }
         }
     }
 }
