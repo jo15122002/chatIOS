@@ -14,6 +14,7 @@ struct ContentView: View {
     @Binding var messageToSend:String
     
     var body: some View {
+        var halfScreenWidth = CGFloat(UIScreen.main.bounds.width/2)
         VStack{
             HStack{
                 Spacer()
@@ -24,21 +25,24 @@ struct ContentView: View {
             List(messages){ message in
                 switch message.messageType{
                     case "received":
-                        receivedMessageCellView(text: message.content)
+                    ReceivedMessageCellView(text: message.content, minSpacerLength: halfScreenWidth)
                     case "sent":
-                        sentMessageCellView(text: message.content)
+                        SentMessageCellView(text: message.content, minSpacerLength: halfScreenWidth)
                     default:
                         Text("error on switch statement")
                 }
             }.onChange(of: webSocketClient.lastReceivedMessage) { newValue in
-                messages.append(Message(id: messages.count, content: newValue, messageType: "received"))
+                messages.append(ChatProtocol.decodeMessage(string: newValue))
             }
-            TextField("SendMessage", text: $messageToSend).onSubmit {
-                messages.append(Message(id: messages.count, content: self.messageToSend, messageType: "sent"))
+            TextField("SendMessage", text: $messageToSend)
+            .onSubmit {
+                let message = Message(id: messages.count, content: self.messageToSend, messageType: "sent", name: "Joyce", date: Message.getMessageDate())
+                messages.append(message)
+                webSocketClient.sendText(str: ChatProtocol.encodeMessage(message: message))
             }
-            Button("Simul rec") {
+            /*Button("Simul rec") {
                 messages.append(Message(id: messages.count, content: "new received message", messageType: "received"))
-            }
+            }*/
         }
     }
 }

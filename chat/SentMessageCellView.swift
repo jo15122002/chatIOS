@@ -7,20 +7,21 @@
 
 import SwiftUI
 
-struct sentMessageCellView: View {
+struct SentMessageCellView: View {
     
     var text:String
+    var minSpacerLength:CGFloat
     
     var body: some View {
         HStack{
-            Spacer()
+            Spacer(minLength: minSpacerLength)
             Text(text)
         }
     }
 }
 
-struct sentMessageCellView_Previews: PreviewProvider {
+struct SentMessageCellView_Previews: PreviewProvider {
     static var previews: some View {
-        sentMessageCellView(text: "message envoyé")
+        SentMessageCellView(text: "message envoyé", minSpacerLength: CGFloat(0.5))
     }
 }

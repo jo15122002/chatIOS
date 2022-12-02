@@ -11,13 +11,16 @@ struct Message: Identifiable{
     var id:Int
     var content:String
     var messageType:String
+    var name:String
+    var date:String
+    
     
     static func defaultSentMessage()->Message{
-        return Message(id: 0, content: "Un message envoyé", messageType: "sent")
+        return Message(id: 0, content: "Un message envoyé", messageType: "sent", name: "Joyce", date: getMessageDate())
     }
     
     static func defaultReceivedMessage()->Message{
-        return Message(id: 1, content: "Un message reçu", messageType: "received")
+        return Message(id: 1, content: "Un message reçu", messageType: "received", name: "Joyce", date: getMessageDate())
     }
     
     static func defaultMessages()->Messages{
@@ -31,6 +34,12 @@ struct Message: Identifiable{
             defaultReceivedMessage(),
             defaultReceivedMessage(),
         ]
+    }
+    
+    static func getMessageDate()->String{
+        let hour = Calendar.current.component(.hour, from: Date())
+        let minutes = Calendar.current.component(.minute, from: Date())
+        return "\(hour):\(minutes)"
     }
 }
 

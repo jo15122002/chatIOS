@@ -14,6 +14,8 @@ class WebSocketClient:ObservableObject{
     
     @Published var connected:Bool = false
     
+    var name = "Joyce"
+    
     struct Ctx{
         var host:String
         var port:String
@@ -25,11 +27,11 @@ class WebSocketClient:ObservableObject{
         
         func url()->URL?
         {
-            return URL(string: urlString())
+            return URL(string: self.urlString())
         }
         
         static func defaultServer()->Ctx{
-            Ctx(host: "localhost", port: "8080", route: "jojo")
+            Ctx(host: "172.28.55.235", port: "8080", route: "toto")
         }
     }
     
@@ -50,6 +52,7 @@ class WebSocketClient:ObservableObject{
 extension WebSocketClient:WebSocketConnectionDelegate{
     func webSocketDidConnect(connection: WebSocketConnection) {
         self.connected = true
+        //socket?.send(string: name)
     }
     
     func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDD4FFD1293A2FB300C1750C /* ChatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */; };
 		EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC52939FED20034AAEF /* chatApp.swift */; };
 		EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC72939FED20034AAEF /* ContentView.swift */; };
 		EDDCCFCA2939FED30034AAEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDCCFC92939FED30034AAEF /* Assets.xcassets */; };
@@ -18,8 +19,8 @@
 		EDDCCFF3293A000C0034AAEF /* NWWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF0293A000C0034AAEF /* NWWebSocket.swift */; };
 		EDDCCFF4293A000C0034AAEF /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF1293A000C0034AAEF /* NWConnection+Extension.swift */; };
 		EDDCCFF8293A01530034AAEF /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */; };
-		EDDCCFFA293A0A470034AAEF /* receivedMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */; };
-		EDDCCFFC293A0AE40034AAEF /* sentMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */; };
+		EDDCCFFA293A0A470034AAEF /* ReceivedMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF9293A0A470034AAEF /* ReceivedMessageCellView.swift */; };
+		EDDCCFFC293A0AE40034AAEF /* SentMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFFB293A0AE40034AAEF /* SentMessageCellView.swift */; };
 		EDDCCFFE293A0D420034AAEF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFFD293A0D420034AAEF /* Message.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProtocol.swift; sourceTree = "<group>"; };
 		EDDCCFC22939FED20034AAEF /* chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDCCFC52939FED20034AAEF /* chatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatApp.swift; sourceTree = "<group>"; };
 		EDDCCFC72939FED20034AAEF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,8 +57,8 @@
 		EDDCCFF0293A000C0034AAEF /* NWWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWWebSocket.swift; sourceTree = "<group>"; };
 		EDDCCFF1293A000C0034AAEF /* NWConnection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWConnection+Extension.swift"; sourceTree = "<group>"; };
 		EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
-		EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receivedMessageCellView.swift; sourceTree = "<group>"; };
-		EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentMessageCellView.swift; sourceTree = "<group>"; };
+		EDDCCFF9293A0A470034AAEF /* ReceivedMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedMessageCellView.swift; sourceTree = "<group>"; };
+		EDDCCFFB293A0AE40034AAEF /* SentMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageCellView.swift; sourceTree = "<group>"; };
 		EDDCCFFD293A0D420034AAEF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,11 +111,12 @@
 			isa = PBXGroup;
 			children = (
 				EDDCCFF6293A00AF0034AAEF /* WebSocket */,
+				EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */,
 				EDDCCFC52939FED20034AAEF /* chatApp.swift */,
 				EDDCCFC72939FED20034AAEF /* ContentView.swift */,
 				EDDCCFFD293A0D420034AAEF /* Message.swift */,
-				EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */,
-				EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */,
+				EDDCCFF9293A0A470034AAEF /* ReceivedMessageCellView.swift */,
+				EDDCCFFB293A0AE40034AAEF /* SentMessageCellView.swift */,
 				EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */,
 				EDDCCFC92939FED30034AAEF /* Assets.xcassets */,
 				EDDCCFCB2939FED30034AAEF /* Preview Content */,
@@ -289,11 +292,12 @@
 				EDDCCFF3293A000C0034AAEF /* NWWebSocket.swift in Sources */,
 				EDDCCFF2293A000C0034AAEF /* WebSocketConnection.swift in Sources */,
 				EDDCCFF8293A01530034AAEF /* WebSocketClient.swift in Sources */,
+				EDD4FFD1293A2FB300C1750C /* ChatProtocol.swift in Sources */,
 				EDDCCFFE293A0D420034AAEF /* Message.swift in Sources */,
 				EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */,
-				EDDCCFFA293A0A470034AAEF /* receivedMessageCellView.swift in Sources */,
+				EDDCCFFA293A0A470034AAEF /* ReceivedMessageCellView.swift in Sources */,
 				EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */,
-				EDDCCFFC293A0AE40034AAEF /* sentMessageCellView.swift in Sources */,
+				EDDCCFFC293A0AE40034AAEF /* SentMessageCellView.swift in Sources */,
 				EDDCCFF4293A000C0034AAEF /* NWConnection+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
