@@ -32,6 +32,8 @@ struct ContentView: View {
                         Text("error on switch statement")
                 }
             }.onChange(of: webSocketClient.lastReceivedMessage) { newValue in
+                print("fugskdfj")
+                print(webSocketClient.lastReceivedMessage)
                 messages.append(ChatProtocol.decodeMessage(string: newValue))
             }
             TextField("SendMessage", text: $messageToSend)

@@ -68,19 +68,20 @@ extension WebSocketClient:WebSocketConnectionDelegate{
     }
     
     func webSocketDidReceiveError(connection: WebSocketConnection, error: NWError) {
-        
+        print("error reçue")
     }
     
     func webSocketDidReceivePong(connection: WebSocketConnection) {
-        
+        print("pong reçu")
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
         self.lastReceivedMessage = string
+        print("nouveau message")
     }
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
-        
+        print("nouveau message data")
     }
     
     
