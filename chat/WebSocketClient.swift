@@ -11,6 +11,7 @@ import Network
 class WebSocketClient:ObservableObject{
     
     @Published var lastReceivedMessage:String = ""
+    @Published var lastReceivedData:Data = Data()
     
     @Published var connected:Bool = false
     
@@ -47,13 +48,18 @@ class WebSocketClient:ObservableObject{
     func sendText(str:String){
         socket?.send(string: str)
     }
+    
+    func sendData(d:Data){
+        socket?.send(data: d)
+    }
 }
 
 extension WebSocketClient:WebSocketConnectionDelegate{
     func webSocketDidConnect(connection: WebSocketConnection) {
         print("Connected")
         self.connected = true
-        socket?.send(string: name)
+        //socket?.send(string: name)
+        //socket?.send(data: <#T##Data#>)
     }
     
     func webSocketDidDisconnect(connection: WebSocketConnection, closeCode: NWProtocolWebSocket.CloseCode, reason: Data?) {
@@ -84,6 +90,7 @@ extension WebSocketClient:WebSocketConnectionDelegate{
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, data: Data) {
         print("nouveau message data")
+        self.lastReceivedData = data
     }
     
     

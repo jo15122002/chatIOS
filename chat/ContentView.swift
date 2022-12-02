@@ -35,12 +35,23 @@ struct ContentView: View {
                 print("fugskdfj")
                 print(webSocketClient.lastReceivedMessage)
                 messages.append(ChatProtocol.decodeMessage(string: newValue))
+            }.onChange(of: webSocketClient.lastReceivedData) { newValue in
+                if let d = UIImage(data: newValue){
+                    UIImage(data: newValue)
+                }
             }
             TextField("SendMessage", text: $messageToSend)
             .onSubmit {
                 let message = Message(id: messages.count, content: self.messageToSend, messageType: "sent", name: "Joyce", date: Message.getMessageDate())
                 messages.append(message)
                 webSocketClient.sendText(str: ChatProtocol.encodeMessage(message: message))
+            }
+            Button("Send image"){
+                print("button image")
+                if let data = UIImage(named: "jojo")?.jpegData(compressionQuality: 1){
+                    print("jenvoie l'image")
+                    webSocketClient.sendData(d: data)
+                }
             }
             /*Button("Simul rec") {
                 messages.append(Message(id: messages.count, content: "new received message", messageType: "received"))
