@@ -11,10 +11,11 @@ import SwiftUI
 struct chatApp: App {
     
     @StateObject var webSocketClient = WebSocketClient(context: .defaultServer())
+    @State var textToSend = "text to send"
     
     var body: some Scene {
         WindowGroup {
-            ContentView(webSocketClient: webSocketClient)
+            ContentView(webSocketClient: webSocketClient, messageToSend: $textToSend)
         }
     }
 }

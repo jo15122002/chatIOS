@@ -19,6 +19,8 @@
 		EDDCCFF4293A000C0034AAEF /* NWConnection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF1293A000C0034AAEF /* NWConnection+Extension.swift */; };
 		EDDCCFF8293A01530034AAEF /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */; };
 		EDDCCFFA293A0A470034AAEF /* receivedMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */; };
+		EDDCCFFC293A0AE40034AAEF /* sentMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */; };
+		EDDCCFFE293A0D420034AAEF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFFD293A0D420034AAEF /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		EDDCCFF1293A000C0034AAEF /* NWConnection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWConnection+Extension.swift"; sourceTree = "<group>"; };
 		EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receivedMessageCellView.swift; sourceTree = "<group>"; };
+		EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentMessageCellView.swift; sourceTree = "<group>"; };
+		EDDCCFFD293A0D420034AAEF /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,9 @@
 				EDDCCFF6293A00AF0034AAEF /* WebSocket */,
 				EDDCCFC52939FED20034AAEF /* chatApp.swift */,
 				EDDCCFC72939FED20034AAEF /* ContentView.swift */,
+				EDDCCFFD293A0D420034AAEF /* Message.swift */,
 				EDDCCFF9293A0A470034AAEF /* receivedMessageCellView.swift */,
+				EDDCCFFB293A0AE40034AAEF /* sentMessageCellView.swift */,
 				EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */,
 				EDDCCFC92939FED30034AAEF /* Assets.xcassets */,
 				EDDCCFCB2939FED30034AAEF /* Preview Content */,
@@ -283,9 +289,11 @@
 				EDDCCFF3293A000C0034AAEF /* NWWebSocket.swift in Sources */,
 				EDDCCFF2293A000C0034AAEF /* WebSocketConnection.swift in Sources */,
 				EDDCCFF8293A01530034AAEF /* WebSocketClient.swift in Sources */,
+				EDDCCFFE293A0D420034AAEF /* Message.swift in Sources */,
 				EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */,
 				EDDCCFFA293A0A470034AAEF /* receivedMessageCellView.swift in Sources */,
 				EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */,
+				EDDCCFFC293A0AE40034AAEF /* sentMessageCellView.swift in Sources */,
 				EDDCCFF4293A000C0034AAEF /* NWConnection+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
