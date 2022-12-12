@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EDB54C7B29471A8200231B89 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C7A29471A8200231B89 /* AudioRecorder.swift */; };
+		EDB54C7D29472B6400231B89 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C7C29472B6400231B89 /* AudioPlayer.swift */; };
 		EDD4FFD1293A2FB300C1750C /* ChatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */; };
 		EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC52939FED20034AAEF /* chatApp.swift */; };
 		EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC72939FED20034AAEF /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		EDB54C7A29471A8200231B89 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		EDB54C7C29472B6400231B89 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProtocol.swift; sourceTree = "<group>"; };
 		EDDCCFC22939FED20034AAEF /* chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDCCFC52939FED20034AAEF /* chatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatApp.swift; sourceTree = "<group>"; };
@@ -116,13 +118,14 @@
 				EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */,
 				EDDCCFC52939FED20034AAEF /* chatApp.swift */,
 				EDDCCFC72939FED20034AAEF /* ContentView.swift */,
+				EDB54C7A29471A8200231B89 /* AudioRecorder.swift */,
+				EDB54C7C29472B6400231B89 /* AudioPlayer.swift */,
 				EDDCCFFD293A0D420034AAEF /* Message.swift */,
 				EDDCCFF9293A0A470034AAEF /* ReceivedMessageCellView.swift */,
 				EDDCCFFB293A0AE40034AAEF /* SentMessageCellView.swift */,
 				EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */,
 				EDDCCFC92939FED30034AAEF /* Assets.xcassets */,
 				EDDCCFCB2939FED30034AAEF /* Preview Content */,
-				EDB54C7A29471A8200231B89 /* AudioRecorder.swift */,
 			);
 			path = chat;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */,
 				EDDCCFFC293A0AE40034AAEF /* SentMessageCellView.swift in Sources */,
 				EDDCCFF4293A000C0034AAEF /* NWConnection+Extension.swift in Sources */,
+				EDB54C7D29472B6400231B89 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

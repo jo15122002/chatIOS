@@ -69,6 +69,13 @@ struct ContentView: View {
                 }.onLongPressGesture(minimumDuration: 2, maximumDistance: .infinity, pressing:{ isPressing in
                     self.isPressing = isPressing
                     self.audioRecorder.startStop()
+                    
+                    if(!self.isPressing){
+                        print("button released")
+                        if let audioData = try? Data(contentsOf: self.audioRecorder.getDocumentsDirectory().appendingPathComponent("recording.m4a")){
+                            AudioPlayer.getInstance().playSound(data: audioData)
+                        }
+                    }
                 }, perform: {})
                 Spacer()
             }
