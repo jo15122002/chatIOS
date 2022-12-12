@@ -12,17 +12,19 @@ struct ReceivedMessageCellView: View {
     var minSpacerLength:CGFloat
     var body: some View {
         HStack{
-            VStack{
-                Text(message.content)
-                if let img = self.message.image {
-                    Image(uiImage: img)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 250)
-                }else if let sound = self.message.sound{
-                    AudioMessageCell(sound: sound)
-                }
-            }
+            HStack{
+                VStack{
+                    Text(message.content)
+                    if let img = self.message.image {
+                        Image(uiImage: img)
+                            .resizable()
+                            .scaledToFit()
+                    }else if let sound = self.message.sound{
+                        AudioMessageCell(sound: sound)
+                    }
+                }.padding(.all)
+            }.background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.red/*@END_MENU_TOKEN@*/)
+                .cornerRadius(10)
             Spacer(minLength: minSpacerLength)
         }
     }
