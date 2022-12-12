@@ -15,7 +15,7 @@ struct ContentView: View {
     @State var messages = [Message]()
     
     @Binding var messageToSend:String
-    //@State var selectedPhoto:PhotosPickerItem? = nil
+    @State var selectedPhoto:PhotosPickerItem? = nil
     
     @ObservedObject var audioRecorder: AudioRecorder
     @State private var isPressing:Bool = false
@@ -49,16 +49,16 @@ struct ContentView: View {
                 messages.append(message)
                 webSocketClient.sendText(str: ChatProtocol.encodeMessage(message: message))
                 Task{
-                    /*if let data = try? await selectedPhoto?.loadTransferable(type: Data.self){
+                    if let data = try? await selectedPhoto?.loadTransferable(type: Data.self){
                         webSocketClient.sendData(d: data)
                         messages.append(MessageManager.instance.createMessage(data: data, id: messages.count, type: "sent", name: "Joyce", date: Message.getMessageDate()))
                         self.selectedPhoto = nil
-                    }*/
+                    }
                 }
             }
             HStack{
                 Spacer()
-                //PhotosPicker("Selectionner une photo", selection: $selectedPhoto)
+                PhotosPicker("Selectionner une photo", selection: $selectedPhoto)
                 Spacer()
                 Button("SendAudio") {
                     //rien pour l'instant
