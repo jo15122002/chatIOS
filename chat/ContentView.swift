@@ -21,7 +21,7 @@ struct ContentView: View {
     @State private var isPressing:Bool = false
     
     var body: some View {
-        var halfScreenWidth = CGFloat(UIScreen.main.bounds.width/2)
+        var halfScreenWidth = CGFloat(UIScreen.main.bounds.width/3)
         VStack{
             HStack{
                 Spacer()

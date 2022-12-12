@@ -12,14 +12,16 @@ struct ReceivedMessageCellView: View {
     var minSpacerLength:CGFloat
     var body: some View {
         HStack{
-            Text(message.content)
-            if let img = self.message.image {
-                Image(uiImage: img)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 250, height: 250)
-            }else if let sound = self.message.sound{
-                AudioMessageCell(sound: sound)
+            VStack{
+                Text(message.content)
+                if let img = self.message.image {
+                    Image(uiImage: img)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 250, height: 250)
+                }else if let sound = self.message.sound{
+                    AudioMessageCell(sound: sound)
+                }
             }
             Spacer(minLength: minSpacerLength)
         }
