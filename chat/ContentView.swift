@@ -8,6 +8,7 @@
 import SwiftUI
 import PhotosUI
 
+
 struct ContentView: View {
     
     @ObservedObject var webSocketClient:WebSocketClient
@@ -15,6 +16,9 @@ struct ContentView: View {
     
     @Binding var messageToSend:String
     @State var selectedPhoto:PhotosPickerItem? = nil
+    
+    @ObservedObject var audioRecorder: AudioRecorder
+    @State private var isPressing:Bool = false
     
     var body: some View {
         var halfScreenWidth = CGFloat(UIScreen.main.bounds.width/2)
@@ -55,9 +59,26 @@ struct ContentView: View {
                         webSocketClient.sendData(d: data)
                     }
                 }
-                
             }
-            PhotosPicker("Selectionner une photo", selection: $selectedPhoto)
+            HStack{
+                Spacer()
+                PhotosPicker("Selectionner une photo", selection: $selectedPhoto)
+                Spacer()
+                Button("SendAudio") {
+                    //rien pour l'instant
+                }.onLongPressGesture(minimumDuration: 2, maximumDistance: .infinity, pressing:{ isPressing in
+                    self.isPressing = isPressing
+                    self.audioRecorder.startStop()
+                }, perform: {})
+                Spacer()
+            }
+            
+            
+            
+            
+            
+            
+            //Boutons de simulation//
             /*Button("Send image"){
                 print("button image")
                 if let data = UIImage(named: "jojo")?.jpegData(compressionQuality: 1){
@@ -75,10 +96,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var webSocketClient = WebSocketClient(context: .defaultServer())
     static var messages = Message.defaultMessages()
-    @State static var textToSend = "Un texte a envoyer"
-    
+    @State static var textToSend = ""
+    static var audioRecorder = AudioRecorder()
     
     static var previews: some View {
-        ContentView(webSocketClient: webSocketClient, messages: messages, messageToSend: $textToSend)
+        ContentView(webSocketClient: webSocketClient, messages: messages, messageToSend: $textToSend, audioRecorder: audioRecorder)
     }
 }

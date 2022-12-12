@@ -12,10 +12,11 @@ struct chatApp: App {
     
     @StateObject var webSocketClient = WebSocketClient(context: .defaultServer())
     @State var textToSend = "text to send"
+    static var audioRecorder = AudioRecorder()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(webSocketClient: webSocketClient, messageToSend: $textToSend)
+            ContentView(webSocketClient: webSocketClient, messageToSend: $textToSend, audioRecorder: AudioRecorder())
         }
     }
 }
