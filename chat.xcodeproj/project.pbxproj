@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EDB54C7B29471A8200231B89 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C7A29471A8200231B89 /* AudioRecorder.swift */; };
 		EDB54C7D29472B6400231B89 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C7C29472B6400231B89 /* AudioPlayer.swift */; };
+		EDB54C7F294753D000231B89 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C7E294753D000231B89 /* MessageManager.swift */; };
+		EDB54C812947594A00231B89 /* AudioMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB54C802947594A00231B89 /* AudioMessageCell.swift */; };
 		EDD4FFD1293A2FB300C1750C /* ChatProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */; };
 		EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC52939FED20034AAEF /* chatApp.swift */; };
 		EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDCCFC72939FED20034AAEF /* ContentView.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		EDB54C7A29471A8200231B89 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		EDB54C7C29472B6400231B89 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		EDB54C7E294753D000231B89 /* MessageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		EDB54C802947594A00231B89 /* AudioMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessageCell.swift; sourceTree = "<group>"; };
 		EDD4FFD0293A2FB300C1750C /* ChatProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatProtocol.swift; sourceTree = "<group>"; };
 		EDDCCFC22939FED20034AAEF /* chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDCCFC52939FED20034AAEF /* chatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatApp.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		EDDCCFB92939FED20034AAEF = {
 			isa = PBXGroup;
 			children = (
+				EDB54C7E294753D000231B89 /* MessageManager.swift */,
 				EDDCCFC42939FED20034AAEF /* chat */,
 				EDDCCFD52939FED30034AAEF /* chatTests */,
 				EDDCCFDF2939FED30034AAEF /* chatUITests */,
@@ -122,6 +127,7 @@
 				EDB54C7C29472B6400231B89 /* AudioPlayer.swift */,
 				EDDCCFFD293A0D420034AAEF /* Message.swift */,
 				EDDCCFF9293A0A470034AAEF /* ReceivedMessageCellView.swift */,
+				EDB54C802947594A00231B89 /* AudioMessageCell.swift */,
 				EDDCCFFB293A0AE40034AAEF /* SentMessageCellView.swift */,
 				EDDCCFF7293A01530034AAEF /* WebSocketClient.swift */,
 				EDDCCFC92939FED30034AAEF /* Assets.xcassets */,
@@ -301,6 +307,8 @@
 				EDD4FFD1293A2FB300C1750C /* ChatProtocol.swift in Sources */,
 				EDDCCFFE293A0D420034AAEF /* Message.swift in Sources */,
 				EDB54C7B29471A8200231B89 /* AudioRecorder.swift in Sources */,
+				EDB54C812947594A00231B89 /* AudioMessageCell.swift in Sources */,
+				EDB54C7F294753D000231B89 /* MessageManager.swift in Sources */,
 				EDDCCFC82939FED20034AAEF /* ContentView.swift in Sources */,
 				EDDCCFFA293A0A470034AAEF /* ReceivedMessageCellView.swift in Sources */,
 				EDDCCFC62939FED20034AAEF /* chatApp.swift in Sources */,

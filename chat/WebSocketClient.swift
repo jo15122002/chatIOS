@@ -32,7 +32,7 @@ class WebSocketClient:ObservableObject{
         }
         
         static func defaultServer()->Ctx{
-            Ctx(host: "172.28.55.235", port: "8080", route: "toto")
+            Ctx(host: "172.28.55.235", port: "8080", route: "chat")
         }
     }
     
@@ -85,6 +85,7 @@ extension WebSocketClient:WebSocketConnectionDelegate{
     
     func webSocketDidReceiveMessage(connection: WebSocketConnection, string: String) {
         print("nouveau message")
+        print(string)
         self.lastReceivedMessage = string
     }
     

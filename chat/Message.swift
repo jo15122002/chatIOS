@@ -6,21 +6,30 @@
 //
 
 import Foundation
+import UIKit
 
 struct Message: Identifiable{
+    
+    enum MessageContentType{
+        case Text,Image,Sound
+    }
+    
     var id:Int
     var content:String
     var messageType:String
     var name:String
     var date:String
+    var image:UIImage?
+    var sound:Data?
+    var messageContentType:MessageContentType
     
     
     static func defaultSentMessage()->Message{
-        return Message(id: 0, content: "Un message envoyé", messageType: "sent", name: "Joyce", date: getMessageDate())
+        return Message(id: 0, content: "Un message envoyé", messageType: "sent", name: "Joyce", date: getMessageDate(), messageContentType: .Text)
     }
     
     static func defaultReceivedMessage()->Message{
-        return Message(id: 1, content: "Un message reçu", messageType: "received", name: "Joyce", date: getMessageDate())
+        return Message(id: 1, content: "Un message reçu", messageType: "received", name: "Joyce", date: getMessageDate(), messageContentType: .Text)
     }
     
     static func defaultMessages()->Messages{

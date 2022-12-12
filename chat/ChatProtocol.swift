@@ -13,7 +13,7 @@ class ChatProtocol{
         return "name::Joyce##content::\(message.content)##date::\(Message.getMessageDate())"
     }
     
-    static func decodeMessage(string:String)->Message{
+    static func decodeMessage(string:String, id:Int)->Message{
         let components = string.components(separatedBy: "##")
         var content = ""
         var name = ""
@@ -32,7 +32,7 @@ class ChatProtocol{
             }
         }
         
-        var message = Message(id: 99, content: content, messageType: "received", name: name, date: date)
+        var message = Message(id: id, content: content, messageType: "received", name: name, date: date, messageContentType: Message.MessageContentType.Text)
         return message
     }
 }

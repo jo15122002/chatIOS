@@ -23,7 +23,7 @@ class AudioPlayer{
             audioPlayer = try AVAudioPlayer(data: data)
             let isReady = audioPlayer?.prepareToPlay()
             audioPlayer?.play()
-            print("je joue le son")
+            //print("je joue le son")
         }catch{
             print("impossible de jouer le son")
         }

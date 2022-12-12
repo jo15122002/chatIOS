@@ -9,19 +9,28 @@ import SwiftUI
 
 struct SentMessageCellView: View {
     
-    var text:String
+    var message:Message
     var minSpacerLength:CGFloat
     
     var body: some View {
         HStack{
             Spacer(minLength: minSpacerLength)
-            Text(text)
+            Text(self.message.content)
+            if let img = self.message.image {
+                Image(uiImage: img)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+            }else if let sound = self.message.sound{
+                AudioMessageCell(sound: sound)
+            }
         }
     }
 }
 
 struct SentMessageCellView_Previews: PreviewProvider {
+    static var message = Message.defaultSentMessage()
     static var previews: some View {
-        SentMessageCellView(text: "message envoyé", minSpacerLength: CGFloat(0.5))
+        SentMessageCellView(message: message, minSpacerLength: CGFloat(0.5))
     }
 }

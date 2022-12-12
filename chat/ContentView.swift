@@ -32,31 +32,27 @@ struct ContentView: View {
             List(messages){ message in
                 switch message.messageType{
                     case "received":
-                    ReceivedMessageCellView(message: message, minSpacerLength: halfScreenWidth)
+                        ReceivedMessageCellView(message: message, minSpacerLength: halfScreenWidth)
                     case "sent":
-                        SentMessageCellView(text: message.content, minSpacerLength: halfScreenWidth)
+                        SentMessageCellView(message: message, minSpacerLength: halfScreenWidth)
                     default:
                         Text("error on switch statement")
                 }
             }.onChange(of: webSocketClient.lastReceivedMessage) { newValue in
-                print("fugskdfj")
-                print(webSocketClient.lastReceivedMessage)
-                messages.append(ChatProtocol.decodeMessage(string: newValue))
+                messages.append(ChatProtocol.decodeMessage(string: newValue, id: messages.count))
             }.onChange(of: webSocketClient.lastReceivedData) { newValue in
-                if let d = UIImage(data: newValue){
-                    UIImage(data: newValue)
-                }
-            }.onChange(of: webSocketClient.lastReceivedData) { newValue in
-                UIImage(data: newValue)
+                messages.append(MessageManager.instance.createMessage(data: newValue, id: messages.count, type: "received", name: "inconnu", date: "date inconnue"))
             }
             TextField("SendMessage", text: $messageToSend)
             .onSubmit {
-                let message = Message(id: messages.count, content: self.messageToSend, messageType: "sent", name: "Joyce", date: Message.getMessageDate())
+                let message = MessageManager.instance.createMessage(string: self.messageToSend, id: messages.count, type: "sent", name: "Joyce", date: Message.getMessageDate())
                 messages.append(message)
                 webSocketClient.sendText(str: ChatProtocol.encodeMessage(message: message))
                 Task{
                     if let data = try? await selectedPhoto?.loadTransferable(type: Data.self){
                         webSocketClient.sendData(d: data)
+                        messages.append(MessageManager.instance.createMessage(data: data, id: messages.count, type: "sent", name: "Joyce", date: Message.getMessageDate()))
+                        self.selectedPhoto = nil
                     }
                 }
             }
@@ -73,7 +69,10 @@ struct ContentView: View {
                     if(!self.isPressing){
                         print("button released")
                         if let audioData = try? Data(contentsOf: self.audioRecorder.getDocumentsDirectory().appendingPathComponent("recording.m4a")){
-                            AudioPlayer.getInstance().playSound(data: audioData)
+                            //AudioPlayer.getInstance().playSound(data: audioData)
+                            
+                            webSocketClient.sendData(d: audioData)
+                            messages.append(MessageManager.instance.createMessage(data: audioData, id: messages.count, type: "sent", name: "Joyce", date: Message.getMessageDate()))
                         }
                     }
                 }, perform: {})
